@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  
+  --color-gold-50: #FCF9F2;
+  --color-gold-100: #F7F1E1;
+  --color-gold-200: #EFE2C2;
+  --color-gold-300: #E4CFA0;
+  --color-gold-400: #D8BD7E;
+  --color-gold-500: #CBA858;
+  --color-gold-600: #B7903D;
+
+  --color-sage-50: #F4F7F4;
+  --color-sage-100: #E8EFE9;
+  --color-sage-200: #D5E1D7;
+  --color-sage-300: #BAC7BE;
+  --color-sage-400: #9AAEA0;
+  --color-sage-500: #7A9382;
+  --color-sage-600: #5C7764;
+  --color-sage-700: #465B4D;
+  --color-sage-800: #334338;
+  --color-sage-900: #1C2620;
+
+  --color-cream-light: #FDFCF7;
+  --color-cream: #FAF7F2;
+  --color-champagne: #F4EFE6;
+}
+
+:root {
+  --perspective-depth: 1200px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #FAF7F2;
+  color: #1C2620;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, .font-editorial {
+  font-family: var(--font-serif);
+}
+
+/* 3D Perspective & Subtle Depth System */
+.perspective-container {
+  perspective: var(--perspective-depth);
+  perspective-origin: center center;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.card-3d {
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s ease;
+  transform: translateZ(0);
+}
+
+.card-3d:hover {
+  transform: translateY(-4px) rotateX(1.5deg) rotateY(-1.5deg) scale(1.008);
+}
+
+/* Editorial Glass & Luxury Borders */
+.luxury-glass {
+  background: rgba(253, 252, 247, 0.78);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.luxury-glass-sage {
+  background: rgba(232, 239, 233, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(122, 147, 130, 0.25);
+}
+
+.gold-border-subtle {
+  border-color: rgba(216, 189, 126, 0.35);
+}
+
+.sage-border-subtle {
+  border-color: rgba(186, 199, 190, 0.45);
+}
+
+/* Custom delicate scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF7F2;
+}
+::-webkit-scrollbar-thumb {
+  background: #D5E1D7;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #BAC7BE;
+}
+
+/* Accessibility: reduce motion when preferred */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+    transform: none !important;
+  }
+}

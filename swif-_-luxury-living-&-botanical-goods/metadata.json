@@ -1,0 +1,8 @@
+{
+  "name": "Swif | Luxury Living & Botanical Goods",
+  "description": "An international luxury e-commerce platform featuring handcrafted lifestyle goods, organic botanicals, and artisanal home pieces in light golden and sage green aesthetics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
